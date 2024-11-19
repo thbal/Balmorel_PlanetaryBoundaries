@@ -1,14 +1,13 @@
 PARAMETER   ILCA(G,TECH_GROUP,FFF, PB_GDTYPE_SET);
-PARAMETER   IM_CO2_prod_elec(G) "CO2eq emission for the production of 1 kWh by unit G"; 
-PARAMETER   IM_CO2_prod_heat(G) "CO2eq emission for the production of 1 MJ by unit G"; 
+PARAMETER   IM_CO2_prod_elec(G) "CO2eq emission for the production of 1 kWh by unit G)"; 
+PARAMETER   IM_CO2_prod_heat(G) "CO2eq emission for the production of 1 MJ by unit G)"; 
 PARAMETER   IM_CO2_constr(G)   "CO2eq emission for the construction of 1 MW of unit G ";
 
 
-*The following specify relation between GDTECHGROUP and GDFUEL
+*The following specify relation between GDTech group and GDFuel
 ILCA(G,TECH_GROUP,FFF, PB_GDTYPE_SET) = YES $(GDATA(G,'GDTECHGROUP') EQ PB_LCA_DATA(TECH_GROUP, FFF, PB_GDTYPE_SET, 'GROUP_TECH') AND GDATA(G,'GDFUEL') EQ PB_LCA_DATA(TECH_GROUP, FFF, PB_GDTYPE_SET, 'FUEL') AND GDATA(G,'GDTYPE') EQ PB_LCA_DATA(TECH_GROUP, FFF, PB_GDTYPE_SET, 'Generation_type'))
 
-*The following attributes LCA values to each generator based on its GDTECHGROUP, GDFUEL and GDTYPE, for the different impact categories
-*Climate Change
+*The following attributes LCA values to each generator based in its GDTECHGROUP, GDFUEL and GDTYPE
 LOOP((G, TECH_GROUP, FFF, PB_GDTYPE_SET),
     IF (ILCA(G,TECH_GROUP,FFF, PB_GDTYPE_SET),
         IM_CO2_prod_elec(G) = PB_LCA_DATA(TECH_GROUP, FFF, PB_GDTYPE_SET, 'LCA_CO2_prod_elec');
@@ -125,7 +124,8 @@ LOOP((G, TECH_GROUP, FFF, PB_GDTYPE_SET),
     );
 );
 
-*LCA data for CCS power plants, producing electricity only, for the different impact categories
+*CCS power plants
+*elec only
 *Climate change
 $ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=0.172621612;
 $ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=0.172621612;
@@ -150,6 +150,7 @@ $ifi %CCS%==yes IM_CO2_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=0.172621612;
 $ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=0.172621612;
 
 *Ozone depletion
+
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=1.0072E-07;
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=1.0072E-07;
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_CC_NGASCCS_CND_E-54_SS-10-MW_Y-2040')=1.0072E-07;
@@ -334,9 +335,158 @@ $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=6.38631
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=6.38631E-07;
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=6.38631E-07;
 
+*CHP
+*GNR_GT_NGASCCS_BP_E-37_SS-5-MW_Y-2020
+*GNR_GT_NGASCCS_BP_E-39_SS-5-MW_Y-2030
+*GNR_GT_NGASCCS_BP_E-40_SS-5-MW_Y-2040
+*GNR_GT_NGASCCS_BP_E-40_SS-5-MW_Y-2050
+*GNR_GT_NGASCCS_BP_E-42_LS-40-MW_Y-2020
+*GNR_GT_NGASCCS_BP_E-43_LS-40-MW_Y-2030
+*GNR_GT_NGASCCS_BP_E-44_LS-40-MW_Y-2040
+*GNR_GT_NGASCCS_BP_E-44_LS-40-MW_Y-2050
+*GNR_ENG_NGASCCS_BP_E-47_Y-2020
+*GNR_ENG_NGASCCS_BP_E-48_Y-2030
+*GNR_ENG_NGASCCS_BP_E-49_Y-2040
+*GNR_ENG_NGASCCS_BP_E-50_Y-2050
+*GNR_ST_NGASCCS_BP_E-7_MS-15-MW_Y-2020
+*GNR_ST_NGASCCS_EXT_E-47_LS-400-MW_Y-2020
+
+*heat only
+*GNR_BO_NGASCCS_E-105_MS-5-MW_Y-2020
+*GNR_BO_NGASCCS_E-105_MS-5-MW_Y-2030
+*GNR_BO_NGASCCS_E-105_MS-5-MW_Y-2040
+*GNR_BO_NGASCCS_E-105_MS-5-MW_Y-2050
+*GNR_IND-BO_NGASCCS_E-93_MS-20-MW_Y-2020
+*GNR_IND-BO_NGASCCS_E-93_MS-20-MW_Y-2030
+*GNR_IND-BO_NGASCCS_E-93_MS-20-MW_Y-2040
+*GNR_IND-BO_NGASCCS_E-93_MS-20-MW_Y-2050
+*GNR_IND-DF_NGASCCS_E-100_MS-3-MW_Y-2020
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_CND_E-59_LS-100-MW_Y-2020')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_BP_E-51_SS-10-MW_Y-2020')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_BP_E-53_SS-10-MW_Y-2030')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_BP_E-54_SS-10-MW_Y-2040')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_BP_E-55_SS-10-MW_Y-2050')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_EXT_E-59_LS-100-MW_Y-2020')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_EXT_E-61_LS-100-MW_Y-2030')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_EXT_E-62_LS-100-MW_Y-2040')=0.048;
+*$ifi %CCS%==yes IM_CO2_prod_elec('GNR_CC_NGASCCS_EXT_E-63_LS-100-MW_Y-2050')=0.048;
 
 
 
+
+
+***MAGIC FUEL***
+IM_CO2_prod_elec('MAGICG')=EPS;
+IM_CO2_constr('MAGICG')=EPS;
+
+IM_Ozone_depletion_constr('MAGICG')=EPS;
+IM_Ozone_depletion_prod_elec('MAGICG')=EPS;
+
+IM_Acidification_constr('MAGICG')=EPS;
+IM_Acidification_prod_elec('MAGICG')=EPS;
+
+IM_Ecotoxicity_freshwater_constr('MAGICG')=EPS;
+IM_Ecotoxicity_freshwater_prod_elec('MAGICG')=EPS;
+
+IM_Eutrophication_freshwater_constr('MAGICG')=EPS;
+IM_Eutrophication_freshwater_prod_elec('MAGICG')=EPS;
+
+IM_LU_constr('MAGICG')=EPS;
+IM_LU_prod_elec('MAGICG')=EPS;
+
+IM_PM_constr('MAGICG')=EPS;
+IM_PM_prod_elec('MAGICG')=EPS;
+
+IM_WU_constr('MAGICG')=EPS;
+IM_WU_prod_elec('MAGICG')=EPS;
+
+IM_Resource_constr('MAGICG')=EPS;
+IM_Resource_prod_elec('MAGICG')=EPS;
+
+IM_CO2_prod_elec('MAGICGH')=EPS;
+IM_CO2_constr('MAGICGH')=EPS;
+
+IM_Ozone_depletion_constr('MAGICGH')=EPS;
+IM_Ozone_depletion_prod_elec('MAGICGH')=EPS;
+
+IM_Acidification_constr('MAGICGH')=EPS;
+IM_Acidification_prod_elec('MAGICGH')=EPS;
+
+IM_Ecotoxicity_freshwater_constr('MAGICGH')=EPS;
+IM_Ecotoxicity_freshwater_prod_elec('MAGICGH')=EPS;
+
+IM_Eutrophication_freshwater_constr('MAGICGH')=EPS;
+IM_Eutrophication_freshwater_prod_elec('MAGICGH')=EPS;
+
+IM_LU_constr('MAGICGH')=EPS;
+IM_LU_prod_elec('MAGICGH')=EPS;
+
+IM_PM_constr('MAGICGH')=EPS;
+IM_PM_prod_elec('MAGICGH')=EPS;
+
+IM_WU_constr('MAGICGH')=EPS;
+IM_WU_prod_elec('MAGICGH')=EPS;
+
+IM_Resource_constr('MAGICGH')=EPS;
+IM_Resource_prod_elec('MAGICGH')=EPS;
+
+
+***PV rooftop*** 2030 2040 2050
+
+*IM_CO2_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =2.20E+06;
+*IM_CO2_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =5.76E-06;
+*IM_Ozone_depletion_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =2.76E-01;
+*IM_Ozone_depletion_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =3.79E-13;
+*IM_Acidification_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =1.71E+04;
+*IM_Acidification_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =4.56E-08;
+*IM_Ecotoxicity_freshwater_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =1.05E+08;
+*IM_Ecotoxicity_freshwater_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =0.001694352;
+*IM_Eutrophication_freshwater_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =1.37E+03;
+*IM_Eutrophication_freshwater_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =8.63E-09;
+*IM_LU_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =1.15E+07;
+*IM_LU_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =3.30E-05;
+*IM_PM_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =1.51E-01;
+*IM_WU_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =2.20E+06;
+*IM_WU_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =2.94E-05;
+*IM_Resource_constr('GNR_PV_SUN_SS-6-KW_Y-2050') =2.12E+02;
+*IM_Resource_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2050') =5.08E-11;
+
+*IM_CO2_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =2.20E+06;
+*IM_Ozone_depletion_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =2.76E-01;
+*IM_Ozone_depletion_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =3.79E-13;
+*IM_Acidification_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =1.71E+04;
+*IM_Acidification_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =4.56E-08;
+*IM_Ecotoxicity_freshwater_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =1.05E+08;
+*IM_Ecotoxicity_freshwater_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =0.001694352;
+*IM_Eutrophication_freshwater_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =1.37E+03;
+*IM_Eutrophication_freshwater_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =8.63E-09;
+*IM_LU_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =1.15E+07;
+*IM_LU_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =3.30E-05;
+*IM_PM_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =1.51E-01;
+*IM_PM_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =6.00E-13;
+*IM_WU_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =2.20E+06;
+*IM_WU_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =2.94E-05;
+*IM_Resource_constr('GNR_PV_SUN_SS-6-KW_Y-2030') =2.12E+02;
+*IM_Resource_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2030') =5.08E-11;
+
+*IM_CO2_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =2.20E+06;
+*IM_CO2_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =5.76E-06;
+*IM_Ozone_depletion_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =2.76E-01;
+*IM_Ozone_depletion_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =3.79E-13;
+*IM_Acidification_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =1.71E+04;
+*IM_Acidification_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =4.56E-08;
+*IM_Ecotoxicity_freshwater_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =1.05E+08;
+*IM_Ecotoxicity_freshwater_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =0.001694352;
+*IM_Eutrophication_freshwater_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =1.37E+03;
+*IM_Eutrophication_freshwater_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =8.63E-09;
+*IM_LU_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =1.15E+07;
+*IM_LU_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =3.30E-05;
+*IM_PM_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =1.51E-01;
+*IM_PM_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =6.00E-13;
+*IM_WU_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =2.20E+06;
+*IM_WU_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =2.94E-05;
+*IM_Resource_constr('GNR_PV_SUN_SS-6-KW_Y-2040') =2.12E+02;
+*IM_Resource_prod_elec('GNR_PV_SUN_SS-6-KW_Y-2040') =5.08E-11;
 
 
 
