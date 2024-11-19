@@ -1,46 +1,46 @@
 Equations
-QPBLIM_CO2(Y)               "PB limit for climate change"
-QPBSCORE_CO2(Y)             "Annual impact score of the PB Climate Change in kg CO2eq"
+*QPBLIM_CO2(Y)
+QPBSCORE_CO2(Y)
 QPBSCORE_CO2_G(Y,G)
 QPBSCORE_CO2_F(Y,FFF)
 
 QPBSCORE_OZONE_DEPLETION(Y)  "Annual impact score of the PB ozone depletion in kg CFC11 eq"
-QPBLIM_OZONE_DEPLETION(Y)    "PB limit for ozone depletion"
+*QPBLIM_OZONE_DEPLETION(Y)       "PB limit for ozone depletion"
 QPBSCORE_OZONE_DEPLETION_G(Y,G)
 QPBSCORE_OZONE_DEPLETION_F(Y,FFF)
 
-QPBSCORE_LU(Y)  "Annual impact score of the PB land usage in Pts"
-QPBLIM_LU(Y)     "PB limit for land usage"
+QPBSCORE_LU(Y)  "Annual impact score of the PB land usage"
+*QPBLIM_LU(Y)      "PB limit for land usage"
 QPBSCORE_LU_G(Y,G)
 QPBSCORE_LU_F(Y,FFF)
 
-QPBSCORE_WU(Y)  "Annual impact score of the PB water usage in m3 depriv."
-QPBLIM_WU(Y)    "PB limit for water usage"
+QPBSCORE_WU(Y)  "Annual impact score of the PB water usage"
+*QPBLIM_WU(Y)     "PB limit for water usage"
 QPBSCORE_WU_G(Y,G)
 QPBSCORE_WU_F(Y,FFF)
 
-QPBSCORE_EUTROPHICATION_FRESHWATER(Y)  "Annual impact score of the PB eutrophication freshwater in kg Peq"
-QPBLIM_EUTROPHICATION_FRESHWATER(Y)     "PB limit for  eutrophication freshwater"
+QPBSCORE_EUTROPHICATION_FRESHWATER(Y)  "Annual impact score of the PB eutrophication freshwater"
+*QPBLIM_EUTROPHICATION_FRESHWATER(Y)      "PB limit for  eutrophication freshwater"
 QPBSCORE_EUTROPHICATION_FRESHWATER_G(Y,G)
 QPBSCORE_EUTROPHICATION_FRESHWATER_F(Y,FFF)
 
-QPBSCORE_ECOTOXICITY_FRESHWATER(Y)  "Annual impact score of the PB ecotoxicity freshwater in CTUe"
-QPBLIM_ECOTOXICITY_FRESHWATER(Y)     "PB limit for  ecotoxicity freshwater"
+QPBSCORE_ECOTOXICITY_FRESHWATER(Y)  "Annual impact score of the PB ecotoxicity freshwater"
+*QPBLIM_ECOTOXICITY_FRESHWATER(Y)      "PB limit for  ecotoxicity freshwater"
 QPBSCORE_ECOTOXICITY_FRESHWATER_G(Y,G)
 QPBSCORE_ECOTOXICITY_FRESHWATER_F(Y,FFF)
 
-QPBSCORE_PM(Y)  "Annual impact score of the PB particluate matter in disease inc."
-QPBLIM_PM(Y)    "PB limit for particluate matter"
+QPBSCORE_PM(Y)  "Annual impact score of the PB particluate matter"
+*QPBLIM_PM(Y)     "PB limit for particluate matter"
 QPBSCORE_PM_G(Y,G)
 QPBSCORE_PM_F(Y,FFF)
 
-QPBSCORE_ACIDIFICATION(Y)  "Annual impact score of the PB acidification in mol H+eq"
-QPBLIM_ACIDIFICATION(Y)    "PB limit for acidification"
+QPBSCORE_ACIDIFICATION(Y)  "Annual impact score of the PB acidification"
+*QPBLIM_ACIDIFICATION(Y)     "PB limit for acidification"
 QPBSCORE_ACIDIFICATION_G(Y,G)
 QPBSCORE_ACIDIFICATION_F(Y,FFF)
 
-QPBSCORE_RESOURCE(Y)  "Annual impact score of the PB resource use, minerals and metals in kg Sbeq "
-*QPBLIM_RESOURCE(Y)    "PB limit for resource use, minerals and metals"
+QPBSCORE_RESOURCE(Y)  "Annual impact score of the PB resource use, minerals and metals "
+*QPBLIM_RESOURCE(Y)     "PB limit for resource use, minerals and metals"
 QPBSCORE_RESOURCE_G(Y,G)
 QPBSCORE_RESOURCE_F(Y,FFF)
 
@@ -61,11 +61,16 @@ VGKNACCUMNET(IY411,IA,G) * IM_CO2_constr(G)/GDATA(G,'GDLIFETIME')))
 QPBSCORE_CO2(IY411)..
 IS_CO2(IY411) =e=SUM(G, IS_CO2_G(IY411,G));
 
-QPBLIM_CO2(IY411)..
-IS_CO2(IY411)/PB_THRESHOLDS_DATA('SOS_CO2_sector')=L=TL_CO2(IY411);
+
+*QPBLIM_CO2(IY411)..
+*IS_CO2(IY411)/PB_THRESHOLDS_DATA('SOS_CO2_sector')=L=1;
+*TL_CO2(IY411);
+
+
 
 QPBSCORE_CO2_F(Y,FFF)..
 IS_CO2_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_CO2_G(Y,G));
+
 
 
 *PB Ozone depletion
@@ -87,8 +92,9 @@ QPBSCORE_OZONE_DEPLETION_F(Y,FFF)..
 IS_OZONE_DEPLETION_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_OZONE_DEPLETION_G(Y,G));
 
 
-QPBLIM_OZONE_DEPLETION(IY411)..
-IS_OZONE_DEPLETION(IY411)/PB_THRESHOLDS_DATA('SOS_Ozone_depletion_sector')=L=TL_OZONE_DEPLETION(IY411) ;
+*QPBLIM_OZONE_DEPLETION(IY411)..
+*IS_OZONE_DEPLETION(IY411)/PB_THRESHOLDS_DATA('SOS_Ozone_depletion_sector')=L=1;
+*TL_OZONE_DEPLETION(IY411) ;
 
 
 *PB Land usage
@@ -104,11 +110,13 @@ VGKNACCUMNET(IY411,IA,G) * IM_LU_constr(G)/GDATA(G,'GDLIFETIME')))
 QPBSCORE_LU(IY411)..
 IS_LU(IY411) =e=SUM(G, IS_LU_G(IY411,G));
 
+
 QPBSCORE_LU_F(Y,FFF)..
 IS_LU_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_LU_G(Y,G));
 
-QPBLIM_LU(IY411)..
-IS_LU(IY411)/PB_THRESHOLDS_DATA('SOS_LU_sector')=L= TL_LU(IY411) ;
+*QPBLIM_LU(IY411)..
+*IS_LU(IY411)/PB_THRESHOLDS_DATA('SOS_LU_sector')=L= 1;
+*TL_LU(IY411) ;
 
 
 
@@ -125,11 +133,16 @@ VGKNACCUMNET(IY411,IA,G) * IM_WU_constr(G)/GDATA(G,'GDLIFETIME')))
 QPBSCORE_WU(IY411)..
 IS_WU(IY411) =e=SUM(G, IS_WU_G(IY411,G));
 
+
 QPBSCORE_WU_F(Y,FFF)..
 IS_WU_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_WU_G(Y,G));
 
-QPBLIM_WU(IY411)..
-IS_WU(IY411)/PB_THRESHOLDS_DATA('SOS_WU_sector')=L= TL_WU(IY411) ;
+*QPBLIM_WU(IY411)..
+*IS_WU(IY411)/PB_THRESHOLDS_DATA('SOS_WU_sector')=L= 1;
+*TL_WU(IY411) ;
+
+
+
 
 
 *PB Eutrophication freshwater
@@ -148,8 +161,12 @@ IS_EUTROPHICATION_FRESHWATER(IY411) =e=SUM(G, IS_EUTROPHICATION_FRESHWATER_G(IY4
 QPBSCORE_EUTROPHICATION_FRESHWATER_F(Y,FFF)..
 IS_EUTROPHICATION_FRESHWATER_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_EUTROPHICATION_FRESHWATER_G(Y,G));
 
-QPBLIM_EUTROPHICATION_FRESHWATER(IY411)..
-IS_Eutrophication_freshwater(IY411)/PB_THRESHOLDS_DATA('SOS_EUTROPHICATION_FRESHWATER_sector')=L= TL_Eutrophication_freshwater(IY411) ;
+*QPBLIM_EUTROPHICATION_FRESHWATER(IY411)..
+*IS_Eutrophication_freshwater(IY411)/PB_THRESHOLDS_DATA('SOS_EUTROPHICATION_FRESHWATER_sector')=L= 1;
+*TL_Eutrophication_freshwater(IY411) ;
+
+
+
 
 
 *PB Ecotoxicity freshwater
@@ -171,8 +188,9 @@ QPBSCORE_ECOTOXICITY_FRESHWATER_F(Y,FFF)..
 IS_ECOTOXICITY_FRESHWATER_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_ECOTOXICITY_FRESHWATER_G(Y,G));
 
 
-QPBLIM_ECOTOXICITY_FRESHWATER(IY411)..
-IS_Ecotoxicity_freshwater(IY411)/PB_THRESHOLDS_DATA('SOS_ECOTOXICITY_FRESHWATER_sector')=L= TL_Ecotoxicity_freshwater(IY411) ;
+*QPBLIM_ECOTOXICITY_FRESHWATER(IY411)..
+*IS_Ecotoxicity_freshwater(IY411)/PB_THRESHOLDS_DATA('SOS_ECOTOXICITY_FRESHWATER_sector')=L=1;
+* TL_Ecotoxicity_freshwater(IY411) ;
 
 *PB Particulate matter
 
@@ -192,8 +210,9 @@ IS_PM(IY411) =e=SUM(G, IS_PM_G(IY411,G));
 QPBSCORE_PM_F(Y,FFF)..
 IS_PM_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_PM_G(Y,G));
 
-QPBLIM_PM(IY411)..
-IS_PM(IY411)/PB_THRESHOLDS_DATA('SOS_PM_sector')=L= TL_PM(IY411) ;
+*QPBLIM_PM(IY411)..
+*IS_PM(IY411)/PB_THRESHOLDS_DATA('SOS_PM_sector')=L=1;
+* TL_PM(IY411) ;
 
 
 *PB Acidification
@@ -213,8 +232,9 @@ IS_ACIDIFICATION(IY411) =e=SUM(G, IS_ACIDIFICATION_G(IY411,G));
 QPBSCORE_ACIDIFICATION_F(Y,FFF)..
 IS_ACIDIFICATION_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_ACIDIFICATION_G(Y,G));
 
-QPBLIM_ACIDIFICATION(IY411)..
-IS_ACIDIFICATION(IY411)/PB_THRESHOLDS_DATA('SOS_ACIDIFICATION_sector')=L= TL_ACIDIFICATION(IY411) ;
+*QPBLIM_ACIDIFICATION(IY411)..
+*IS_ACIDIFICATION(IY411)/PB_THRESHOLDS_DATA('SOS_ACIDIFICATION_sector')=L=1;
+* TL_ACIDIFICATION(IY411) ;
 
 *PB resource use
 QPBSCORE_RESOURCE_G(IY411,G)..
@@ -234,7 +254,8 @@ QPBSCORE_RESOURCE_F(Y,FFF)..
 IS_RESOURCE_F(Y,FFF) =e=SUM((G)$(IGF(G,FFF)), IS_RESOURCE_G(Y,G));
 
 *QPBLIM_RESOURCE(IY411)..
-*IS_RESOURCE(IY411)/PB_THRESHOLDS_DATA('SOS_RESOURCE_sector')=L= TL_RESOURCE(IY411) ;
+*IS_RESOURCE(IY411)/PB_THRESHOLDS_DATA('SOS_RESOURCE_sector')=L=1;
+* TL_RESOURCE(IY411) ;
 
 
 
