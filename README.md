@@ -1,8 +1,8 @@
-#Balmorel including Planetary Boundaries
+# Balmorel including Planetary Boundaries**
 
 This folder contains the code and data used ofr the study _Exploring configurations of a European energy system within the planetary boundaries_. 
 
-##Description of the branched
+## Description of the branches
 Main : Balmorel main code without Planetary Boundaries
 NetZero:  Model for the scenario Net Zero
 PBCO2:  Model for the scenario PBCO2
