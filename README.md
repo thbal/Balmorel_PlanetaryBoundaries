@@ -1,4 +1,4 @@
-# Balmorel including Planetary Boundaries**
+# Balmorel including Planetary Boundaries
 
 This folder contains the code and data used ofr the study _Exploring configurations of a European energy system within the planetary boundaries_. 
 
