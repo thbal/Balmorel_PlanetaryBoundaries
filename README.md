@@ -1,3 +1,16 @@
+#Balmorel including Planetary Boundaries
+
+This folder contains the code and data used ofr the study _Exploring configurations of a European energy system within the planetary boundaries_. 
+
+##Description of the branched
+Main : Balmorel main code without Planetary Boundaries
+NetZero:  Model for the scenario Net Zero
+PBCO2:  Model for the scenario PBCO2
+PlanetaryBoundaries :  Model for the scenario PB8
+MagicFuel : Model for the scenario Sufficiency
+
+
+
 # Balmorel
 
 The Balmorel energy system model. Data is included in the [Balmorel_data repository](https://github.com/balmorelcommunity/Balmorel_data), which we recommend cloning to base/ for version control of both base data and framework. Note: The cloned folder should be renamed from "Balmorel_data" to "data" to function properly.
