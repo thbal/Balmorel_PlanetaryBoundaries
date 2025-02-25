@@ -149,6 +149,20 @@ $ifi %CCS%==yes IM_CO2_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=0.172621612;
 $ifi %CCS%==yes IM_CO2_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=0.172621612;
 $ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=0.172621612;
 
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=0.024984315;
+$ifi %CCS%==yes IM_CO2_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=0.024984315;
+
+                               
 *Ozone depletion
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=1.0072E-07;
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=1.0072E-07;
@@ -172,6 +186,18 @@ $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=1.0072E-07;
 $ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=1.0072E-07;
 
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=6.55869E-10;
+$ifi %CCS%==yes IM_Ozone_depletion_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=6.55869E-10;
 
 *Land usage
 $ifi %CCS%==yes IM_LU_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=0.211679555;
@@ -196,6 +222,20 @@ $ifi %CCS%==yes IM_LU_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=0.211679555;
 $ifi %CCS%==yes IM_LU_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=0.211679555;
 $ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=0.211679555;
 
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=0.047911733;
+$ifi %CCS%==yes IM_LU_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=0.047911733;
+
+
 *Water usage
 $ifi %CCS%==yes IM_WU_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=0.037216977;
 $ifi %CCS%==yes IM_WU_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=0.037216977;
@@ -218,6 +258,19 @@ $ifi %CCS%==yes IM_WU_prod_elec('GNR_ENG_NGASCCS_CND_E-48_Y-2030')=0.037216977;
 $ifi %CCS%==yes IM_WU_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=0.037216977;
 $ifi %CCS%==yes IM_WU_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=0.037216977;
 $ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=0.037216977;
+
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=0.011671391;
+$ifi %CCS%==yes IM_WU_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=0.011671391;
 
 *Eutrophication freshwater
 $ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=1.34191E-05;
@@ -242,6 +295,19 @@ $ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ENG_NGASCCS_CND_E-49
 $ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=1.34191E-05;
 $ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=1.34191E-05;
 
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=2.08079E-05;
+$ifi %CCS%==yes IM_Eutrophication_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=2.08079E-05;
+
 *Ecotoxicity freshwater
 $ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=6.012688197;
 $ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=6.012688197;
@@ -264,6 +330,19 @@ $ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ENG_NGASCCS_CND_E-48_Y-
 $ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=6.012688197;
 $ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=6.012688197;
 $ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=6.012688197;
+
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=4.496520766;
+$ifi %CCS%==yes IM_Ecotoxicity_freshwater_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=4.496520766;
 
 *Particulate matter
 $ifi %CCS%==yes IM_PM_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=4.06093E-09;
@@ -288,6 +367,19 @@ $ifi %CCS%==yes IM_PM_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=4.06093E-09;
 $ifi %CCS%==yes IM_PM_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=4.06093E-09;
 $ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=4.06093E-09;
 
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=1.36912E-09;
+$ifi %CCS%==yes IM_PM_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=1.36912E-09;
+
 *Acidification
 $ifi %CCS%==yes IM_Acidification_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=0.002183073;
 $ifi %CCS%==yes IM_Acidification_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=0.002183073;
@@ -311,6 +403,19 @@ $ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=0.
 $ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=0.002183073;
 $ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=0.002183073;
 
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=0.000141728;
+$ifi %CCS%==yes IM_Acidification_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=0.000141728;
+
 *Resource use
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_CC_NGASCCS_CND_E-51_SS-10-MW_Y-2020')=6.38631E-07;
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_CC_NGASCCS_CND_E-53_SS-10-MW_Y-2030')=6.38631E-07;
@@ -333,6 +438,19 @@ $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ENG_NGASCCS_CND_E-48_Y-2030')=6.38631
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ENG_NGASCCS_CND_E-49_Y-2040')=6.38631E-07;
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ENG_NGASCCS_CND_E-50_Y-2050')=6.38631E-07;
 $ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_NGASCCS_CND_E-47_LS-400-MW_Y-2020')=6.38631E-07;
+
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-23_LS-220-MW-FEED_Y-2020')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-23_MS-80-MW-FEED_Y-2020 ')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-23_SS-35-MW-FEED_Y-2020 ')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_LS-220-MW-FEED_Y-2030 ')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2030 ')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2040')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_MS-80-MW-FEED_Y-2050 ')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2030')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2040 ')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-24_SS-35-MW-FEED_Y-2050')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2040')=6.78241E-07;
+$ifi %CCS%==yes IM_Resource_prod_elec('GNR_ST_MSWCCS_CND_E-25_LS-220-MW-FEED_Y-2050')=6.78241E-07;
 
 
 
