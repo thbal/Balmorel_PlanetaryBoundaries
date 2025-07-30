@@ -1,6 +1,6 @@
 project = "Balmorel"
-copyright = "2024, Mathias Berg Rosendal"
-author = "Mathias Berg Rosendal"
+copyright = "2024, Mathias Berg Rosendal, Tim Graulich"
+author = "Mathias Berg Rosendal, Tim Graulich"
 release = "5.0"
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", ".testenv", ".testenv/**", "README.md"]
@@ -13,6 +13,7 @@ html_static_path = ["css"]
 extensions = [
     "myst_parser",  # in order to use markdown
     'sphinx_copybutton',
+    'sphinx_tabs.tabs',
     # "autoapi.extension",  # in order to use markdown
 ]
 
