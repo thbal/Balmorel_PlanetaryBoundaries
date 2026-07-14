@@ -1264,7 +1264,7 @@ EQUATIONS
    QLIMCO2C(Y,C,GROUP)       "Limit on annual CO2-emission by year and country and group (ton)"
    QLIMSO2C(Y,C,GROUP)       "Limit on annual SO2 emission by year and country and group (ton)"
    QLIMNOXC(Y,C,GROUP)       "Limit on annual NOx emission by year and country and group (ton)"
-
+   
    QLIMCO2NA(Y,GROUP)        "Limit on annual CO2-emission by year (aggregated countries) (ton)"
 
    QMAXINVESTCF(Y,C,FFF)      "Maximal investment by country and fuel during one simulated year (MW)"
@@ -1297,6 +1297,10 @@ EQUATIONS
 *----- End: Any equations declarations for addon to be placed here -------------
 *-------------------------------------------------------------------------------
 ;
+
+$ifi not %RollingSeasons%==yes $goto NoRollingSeasons
+EQUATION   QLIMCO2ROLLS(Y,GROUP,S);
+$label NoRollingSeasons
 
 * Equation definitions:
 *----- The objective function QOBJ: --------------------------------------------
@@ -2163,6 +2167,26 @@ QLIMCO2C(IY411,C,GROUP)$(EMI_POL(IY411,C,GROUP,'LIM_CO2') AND (EMI_POL(IY411,C,G
 $include "../../base/addons/_hooks/qlimco2c.inc"
 ;
 
+$ifi not %RollingSeasons%==yes $goto skip 
+PARAMETER EMI_POLNA_S(YYY,SSS, GROUP,EMIPOLSET);
+PARAMETER EMI_POLNA_S2(YYY,SSS, GROUP,EMIPOLSET);
+execute_load '../../simex/EMI_POLNA_S.gdx',    EMI_POLNA_S;
+EMI_POLNA_S(YYY,SSS, GROUP,EMIPOLSET)= 0;
+EMI_POLNA_S2('2050',SSS, GROUP,EMIPOLSET)= EPS;
+EMI_POLNA_S2('2050','S03', GROUP,EMIPOLSET)= 10000000;
+EMI_POLNA_S2('2050','S07', GROUP,EMIPOLSET)= 10000000;
+
+QLIMCO2ROLLS(IY411,GROUP,IS3)$(EMI_POLNA(IY411,GROUP,'LIM_CO2') AND (EMI_POLNA(IY411,GROUP,'LIM_CO2') LT INF))..
+      SUM(C,
+         SUM((IA,G)$(IAGK_HASORPOT(IY411,IA,G) AND ICA(C,IA) AND GROUP_AAA(GROUP,IA)), SUM((T), IHOURSINST(IS3,T)*IHOURFRAC * (IM_CO2(G) * IOF0001) * IOF3P6 * VGF_T(IY411,IA,G,IS3,T)))
+         )
+      =L= EMI_POLNA_S2(IY411,IS3, GROUP,'LIM_CO2')
+$include "../../base/addons/_hooks/qlimco2rolls.inc" 
+;
+$label skip
+
+
+
 * "Limit on annual SO2 emission by year and country (ton)"
 QLIMSO2C(IY411,C,GROUP)$(EMI_POL(IY411,C,GROUP,'LIM_SO2') AND (EMI_POL(IY411,C,GROUP,'LIM_SO2') LT INF))..
       SUM((IA,G)$(IAGK_HASORPOT(IY411,IA,G) AND ICA(C,IA) AND GROUP_AAA(GROUP,IA)), SUM((IS3,T), IHOURSINST(IS3,T)*IHOURFRAC * (IM_SO2(G) * IOF0001) * IOF3P6 * VGF_T(IY411,IA,G,IS3,T)))
@@ -2441,6 +2465,8 @@ $ifi not %RollingSeasons%==yes  QLIMCO2C
 $ifi not %RollingSeasons%==yes  QLIMSO2C
 $ifi not %RollingSeasons%==yes  QLIMNOXC
 $ifi not %RollingSeasons%==yes  QLIMCO2NA
+
+$ifi %RollingSeasons%==yes  QLIMCO2ROLLS
 
 *---------------------------------------------------------------
 $ifi not %TechInvest%==yes $ifi not %DECOM%==yes  $goto NO_TECH_INVESTMENTS_NO_DECOMMISSIONING
